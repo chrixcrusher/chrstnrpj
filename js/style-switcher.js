@@ -6,8 +6,13 @@ styleSwitcherToggle.addEventListener("click", () => {
 
 // Hide style switcher on scroll
 window.addEventListener("scroll", () => {
-    if (document.querySelector(".style-switcher").classList.contains("open")) {
-        document.querySelector(".style-switcher").classList.remove("open");
+    const styleSwitcher = document.querySelector(".style-switcher");
+    if (styleSwitcher) {
+        if (styleSwitcher.classList.contains("open")) {
+            styleSwitcher.classList.remove("open");
+        }
+    } else {
+        console.log("Style switcher element not found.");
     }
 }, true);
 

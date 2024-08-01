@@ -14,7 +14,7 @@ window.addEventListener("scroll", () => {
 // Switch theme
 function switchTheme(theme) {
     document.body.setAttribute('data-theme', theme);
-    localStorage.setItem('data-theme', theme); // Save the selected theme to localStorage
+    localStorage.setItem('color-theme', theme); // Save the selected theme to localStorage
 }
 
 // Day/night toggle
@@ -43,6 +43,17 @@ window.addEventListener("load", () => {
         dayNight.querySelector("i").classList.add("fa-moon");
     }  
 
-    const savedColorTheme = localStorage.getItem('datatheme');
-    
+    // Retrieve the saved theme from localStorage
+    const savedColorTheme = localStorage.getItem('color-theme');    
+    // Check if a saved theme exists and is not empty
+    if (savedColorTheme) {
+        // Apply the saved theme
+        document.body.setAttribute('data-theme', savedColorTheme);
+    } else {
+        // Use the default theme if no saved theme is found
+        const defaultTheme = 'color-1'; // Specify your default theme here
+        document.body.setAttribute('data-theme', defaultTheme);
+        // Optionally save the default theme to localStorage
+        localStorage.setItem('color-theme', defaultTheme);
+    }  
 });

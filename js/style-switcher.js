@@ -7,14 +7,14 @@ styleSwitcherToggle.addEventListener("click", () => {
 // Hide style switcher on scroll
 window.addEventListener("scroll", () => {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
-        document.querySelector(".style-switcher").classList.remove("open");
+        document.querySelector(".style-switcher").classList.toggle("open");
     }
 });
 
 // Switch theme
 function switchTheme(theme) {
     document.body.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme); // Save the selected theme to localStorage
+    localStorage.setItem('data-theme', theme); // Save the selected theme to localStorage
 }
 
 // Day/night toggle

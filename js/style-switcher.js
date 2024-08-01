@@ -7,7 +7,7 @@ styleSwitcherToggle.addEventListener("click", () => {
 // Hide style switcher on scroll
 window.addEventListener("scroll", () => {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
-        document.querySelector(".style-switcher").classList.toggle("open");
+        document.querySelector(".style-switcher").classList.remove("open");
     }
 });
 
@@ -28,9 +28,9 @@ dayNight.addEventListener("click", () => {
 
 // Apply the saved theme on page load
 window.addEventListener("load", () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        if (savedTheme === 'dark') {
+    const savedDNTheme = localStorage.getItem('theme');
+    if (savedDNTheme) {
+        if (savedDNTheme === 'dark') {
             document.body.classList.add("dark");
             dayNight.querySelector("i").classList.add("fa-sun");
         } else {
@@ -41,5 +41,8 @@ window.addEventListener("load", () => {
         // Default to light mode if no theme is saved
         document.body.classList.remove("dark");
         dayNight.querySelector("i").classList.add("fa-moon");
-    }
+    }  
+
+    const savedColorTheme = localStorage.getItem('datatheme');
+    
 });

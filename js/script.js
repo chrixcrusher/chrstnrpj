@@ -165,3 +165,14 @@ function calculateAge(birthdate) {
 
 const myAge = calculateAge("2000-01-16");
 document.getElementById("age").textContent = myAge;
+
+
+
+// Logo Reload 
+function updateAndReload() {
+    // Update the URL fragment to #home
+    history.replaceState(null, null, '#home');
+    
+    // Reload the page
+    window.location.reload();
+}

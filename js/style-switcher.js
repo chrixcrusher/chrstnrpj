@@ -9,7 +9,9 @@ window.addEventListener("scroll", () => {
     if (document.querySelector(".style-switcher").classList.contains("open")) {
         document.querySelector(".style-switcher").classList.remove("open");
     }
-});
+}, true);
+
+
 
 // Switch theme
 function switchTheme(theme) {

@@ -274,11 +274,24 @@ ul {
 .aside .nav li a {
     font-size: 16px;
     font-weight: 600;
-    display: block;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
     padding: 5px 15px;
     text-transform: none;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.aside .nav li a i {
+    margin-right: 10px; /* Space between icon and text */
+    width: 18px; /* Set width for the icon */
+    height: 18px; /* Set height for the icon */
+}
+
+.aside .nav li a span {
+    padding-right: 2px;
+    display: inline; /* Ensure span takes up only necessary space */
 }
 
 .aside .nav li a.active {

@@ -181,7 +181,7 @@ function updateAndReload() {
 window.addEventListener('beforeunload', function (event) {
   
    // Update the URL fragment to #home
-    history.replaceState(null, null, '#home');
+   event.preventDefault();
     
     // Reload the page
     window.location.reload();

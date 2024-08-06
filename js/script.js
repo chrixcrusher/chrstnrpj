@@ -176,3 +176,14 @@ function updateAndReload() {
     // Reload the page
     window.location.reload();
 }
+
+// Refresh button reload
+window.addEventListener('beforeunload', function (event) {
+  
+   // Update the URL fragment to #home
+    history.replaceState(null, null, '#home');
+    
+    // Reload the page
+    window.location.reload();
+});
+

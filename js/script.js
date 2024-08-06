@@ -184,6 +184,6 @@ window.addEventListener('beforeunload', function (event) {
    event.preventDefault();
     
     // Reload the page
-     window.location.href = "#home";
+     window.location.hash = "#home";
 });
 

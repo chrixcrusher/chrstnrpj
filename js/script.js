@@ -177,17 +177,11 @@ function updateAndReload() {
     window.location.reload();
 }
 
-// Refresh button reload
-window.addEventListener('beforeunload', function (event) {
-  
-   // Update the URL fragment to #home
-   event.preventDefault();
-    
-    // Reload the page
-    window.location.hash = "#home";
-
-    if (window.location.hash !== '#home') {
-        window.location.replace('#home');
-    }
+// Reload URL handler
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.location.hash !== '#home') {
+    window.location.hash = '#home';
+  }
 });
+
 

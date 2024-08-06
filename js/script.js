@@ -187,7 +187,7 @@ window.addEventListener('beforeunload', function (event) {
     window.location.hash = "#home";
 
     if (window.location.hash !== '#home') {
-      window.location.hash = '#home';
+        window.location.replace('#home');
     }
 });
 

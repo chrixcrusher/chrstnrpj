@@ -184,6 +184,10 @@ window.addEventListener('beforeunload', function (event) {
    event.preventDefault();
     
     // Reload the page
-     window.location.hash = "#home";
+    window.location.hash = "#home";
+
+    if (window.location.hash !== '#home') {
+      window.location.hash = '#home';
+    }
 });
 

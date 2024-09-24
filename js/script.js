@@ -185,3 +185,58 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Carousel Animation for multiple carousels
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const carouselImages = carousel.querySelector('.carousel-images');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    let currentIndex = 0;
+    const totalImages = carouselImages.querySelectorAll('img').length;
+  
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < totalImages - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateCarousel();
+    });
+  
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = totalImages - 1;
+      }
+      updateCarousel();
+    });
+  
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      carouselImages.style.transform = `translateX(${offset}%)`;
+    }
+  });
+  
+
+  
+//Fullscreen
+
+// Select all clickable images within the carousel
+const clickableImages = document.querySelectorAll('.clickable-img');
+
+clickableImages.forEach(image => {
+  image.addEventListener('click', () => {
+    // If the image is not in fullscreen, request it
+    if (!document.fullscreenElement) {
+      image.requestFullscreen().catch(err => {
+        alert(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else {
+      // If already in fullscreen, exit fullscreen mode
+      document.exitFullscreen();
+    }
+  });
+});
+
+
+

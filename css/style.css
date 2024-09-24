@@ -665,8 +665,8 @@ h3.my-profession {
 } 
 
 .portfolio .portfolio-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+    flex: 0 0 50%;
+    max-width: 50%;
     margin-bottom: 30 px;
 }
 
@@ -680,6 +680,62 @@ h3.my-profession {
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
     display: block;
+}
+
+.carousel {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+.carousel-images img {
+    width: 100%;
+    height: auto;
+  }
+  
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+  }
+  
+.prev-btn {
+    left: 10px;
+  }
+  
+.next-btn {
+    right: 10px;
+  }
+  
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+.portfolio .portfolio-item-inner .portfolio-info h4 {
+    text-align: center;
+    color: var(--text-black-900);
+}
+
+
+.portfolio .portfolio-item-inner .portfolio-info p {
+    color: var(--text-black-700);
+    text-align: justify;
 }
 
 /* Contact */
@@ -885,3 +941,18 @@ h3.my-profession {
 [data-theme="color-5"] {
 --skin-color: #ff1493;
 }
+
+
+/* Clikcable image */
+.clickable-img {
+    width: 300px;
+    height: auto;
+    cursor: pointer; /* Makes it look clickable */
+}
+  
+.fullscreen {
+    width: 100vw;  /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: contain; /* Keep the aspect ratio of the image */
+}
+  

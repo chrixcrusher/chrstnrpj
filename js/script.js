@@ -176,3 +176,12 @@ function updateAndReload() {
     // Reload the page
     window.location.reload();
 }
+
+// Reload URL handler
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.location.hash !== '#home') {
+    window.location.hash = '#home';
+  }
+});
+
+

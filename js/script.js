@@ -129,7 +129,7 @@ function sendMail() {
         message: document.getElementById("message_f").value
     };
 
-    var serviceID = "service_sbdnyrj";
+    var serviceID = "service_4ggwb67";
     var templateID = "template_b7c9ah4";
 
     emailjs.send(serviceID, templateID, params)

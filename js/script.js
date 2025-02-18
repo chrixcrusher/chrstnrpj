@@ -116,12 +116,9 @@ const nav = document.querySelector(".nav"),
 
 
 // Initialize EmailJS SDK
+emailjs.init("5uw1ovOrCoT-Bj18B");  // Use only the public key
+
 function sendMail() {
-    (function(){
-        emailjs.init({
-            publicKey: "5uw1ovOrCoT-Bj18B",
-        });
-    })();
     var params = {
         name: document.getElementById("name_f").value,
         email: document.getElementById("email_f").value,
@@ -129,22 +126,26 @@ function sendMail() {
         message: document.getElementById("message_f").value
     };
 
-    var serviceID = "service_4ggwb67";
-    var templateID = "template_b7c9ah4";
+    var serviceID = "service_sbdnyrj";  
+    var templateID = "template_b7c9ah4";  
 
     emailjs.send(serviceID, templateID, params)
-    .then(
-        res => {
-            document.getElementById("name_f").value = "";
-            document.getElementById("email_f").value = "";
-            document.getElementById("subject_f").value = "";
-            document.getElementById("message_f").value = "";
-            console.log(res);
-            alert("Email sent successfully");
-        })
-    .catch(err => console.log(err));
+    .then(function(res) {
+        // Clear form fields on success
+        document.getElementById("name_f").value = "";
+        document.getElementById("email_f").value = "";
+        document.getElementById("subject_f").value = "";
+        document.getElementById("message_f").value = "";
+        
+        console.log("Email sent successfully:", res);
+        alert("Email sent successfully!");
+    })
+    .catch(function(err) {
+        console.error("Failed to send email:", err);
+        alert("Error sending email. Check console for details.");
+    });
 }
-//To re deploy again
+
 
 
 

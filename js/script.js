@@ -116,7 +116,7 @@ const nav = document.querySelector(".nav"),
 
 
 // Initialize EmailJS SDK
-emailjs.init("5uw1ovOrCoT-Bj18B");  // Use only the public key
+emailjs.init("SsIFlJQdwV4ZZXWJn");  // Use only the public key
 
 function sendMail() {
     var params = {
